@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LogInSignUpUsingFirebase" parent="Theme.Material3.DayNight.NoActionBar">
+
+         <item name="colorPrimary">#f09819</item>
+    </style>
+
+    <style name="Theme.LogInSignUpUsingFirebase" parent="Base.Theme.LogInSignUpUsingFirebase" />
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "783496023125",
+    "project_id": "login-signup-using-fireb-66961",
+    "storage_bucket": "login-signup-using-fireb-66961.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783496023125:android:7c1702db4ab5fd09c998dc",
+        "android_client_info": {
+          "package_name": "com.ksc.loginsignupusingfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_hn50wQo-laCGgiohmyp9cxP0ozk3kFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
