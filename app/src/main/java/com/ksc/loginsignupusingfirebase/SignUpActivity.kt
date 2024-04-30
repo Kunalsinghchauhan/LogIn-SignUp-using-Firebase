@@ -29,40 +29,36 @@ class SignUpActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString()
             val number = binding.etNumber.text.toString()
             val password = binding.etPassword.text.toString()
-            val confirmPassword = binding.etConfirmPassword.text.toString()
-            val user = User(name, email, number, password)
-            if (name.isEmpty() || email.isEmpty() || number.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            val userName = binding.etUserName.text.toString()
+
+            val user = User(name, email, number,userName)
+            if (name.isEmpty() || email.isEmpty() || number.isEmpty() || password.isEmpty() || userName.isEmpty()) {
                 Snackbar.make(binding.root, "Please Fill All Boxes ", Snackbar.LENGTH_SHORT).show()
             } else
-                if (password != confirmPassword) {
-                    Snackbar.make(binding.root, "Please Check Your Password", Snackbar.LENGTH_SHORT)
-                        .show()
-                } else {
-                    auth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                databaseReference =
-                                    FirebaseDatabase.getInstance().getReference("Users")
-                                databaseReference.child(number).setValue(user)
-                                    .addOnSuccessListener {
-                                        Snackbar.make(
-                                            binding.root,
-                                            "Registration Successful",
-                                            Snackbar.LENGTH_SHORT
-                                        ).show()
-                                        auth.signOut()
-                                        startActivity(Intent(this, LogInActivity::class.java))
-                                        finish()
-                                    }
-                            } else {
-                                Snackbar.make(
-                                    binding.root,
-                                    task.exception?.message.toString(),
-                                    Snackbar.LENGTH_SHORT
-                                ).show()
-                            }
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            databaseReference =
+                                FirebaseDatabase.getInstance().getReference("Users")
+                            databaseReference.child(userName).setValue(user)
+                                .addOnSuccessListener {
+                                    Snackbar.make(
+                                        binding.root,
+                                        "Registration Successful",
+                                        Snackbar.LENGTH_SHORT
+                                    ).show()
+                                    auth.signOut()
+                                    startActivity(Intent(this, LogInActivity::class.java))
+                                    finish()
+                                }
+                        } else {
+                            Snackbar.make(
+                                binding.root,
+                                task.exception?.message.toString(),
+                                Snackbar.LENGTH_SHORT
+                            ).show()
                         }
-                }
+                    }
         }
 
     }

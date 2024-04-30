@@ -1,5 +1,6 @@
 package com.ksc.loginsignupusingfirebase
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,6 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLogInBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var authStateListener: FirebaseAuth.AuthStateListener
-    private var isRedirectedFromSignUp = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
